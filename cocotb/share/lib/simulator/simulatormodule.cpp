@@ -831,7 +831,7 @@ static PyObject *stop_simulator(PyObject *, PyObject *) {
     Py_RETURN_NONE;
 }
 
-static PyObject *stop_simulator(PyObject *, PyObject *) {
+static PyObject *pause_simulator(PyObject *, PyObject *) {
     if (!gpi_has_registered_impl()) {
         PyErr_SetString(PyExc_RuntimeError, "No simulator available!");
         return NULL;
