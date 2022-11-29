@@ -93,6 +93,7 @@ static GpiHandleStore unique_handles;
 #endif
 
 static bool sim_ending = false;
+static bool sim_stopping = false;
 
 static size_t gpi_print_registered_impl() {
     vector<GpiImplInterface *>::iterator iter;
@@ -128,9 +129,14 @@ void gpi_embed_end() {
     sim_ending = true;
 }
 
-void gpi_sim_end() {
+void gpi_sim_stop() {
     registered_impls[0]->sim_end();
     sim_ending = true;
+}
+
+void gpi_sim_stop() {
+    registered_impls[0]->sim_stop();
+    sim_stopping = true;
 }
 
 void gpi_cleanup(void) {
