@@ -971,6 +971,12 @@ static PyMethodDef SimulatorMethods[] = {
                "stop_simulator() -> None\n"
                "Instruct the attached simulator to stop. Users should not call "
                "this function.")},
+     {"pause_simulator", pause_simulator, METH_VARARGS,
+     PyDoc_STR("pause_simulator()\n"
+               "--\n\n"
+               "pause_simulator() -> None\n"
+               "Instruct the attached simulator to pause. Users should not call "
+               "this function.")},
     {"log_level", log_level, METH_VARARGS,
      PyDoc_STR("log_level(level, /)\n"
                "--\n\n"
