@@ -248,6 +248,7 @@ class GPI_EXPORT GpiImplInterface {
 
     /* Sim related */
     virtual void sim_end() = 0;
+    virtual void sim_stop() = 0;
     virtual void get_sim_time(uint32_t *high, uint32_t *low) = 0;
     virtual void get_sim_precision(int32_t *precision) = 0;
     virtual const char *get_simulator_product() = 0;
