@@ -831,6 +831,16 @@ static PyObject *stop_simulator(PyObject *, PyObject *) {
     Py_RETURN_NONE;
 }
 
+static PyObject *stop_simulator(PyObject *, PyObject *) {
+    if (!gpi_has_registered_impl()) {
+        PyErr_SetString(PyExc_RuntimeError, "No simulator available!");
+        return NULL;
+    }
+    
+    gpi_sim_stop();
+    Py_RETURN_NONE;
+}
+
 static PyObject *deregister(gpi_hdl_Object<gpi_cb_hdl> *self, PyObject *) {
     gpi_deregister_callback(self->hdl);
 
