@@ -129,7 +129,7 @@ void gpi_embed_end() {
     sim_ending = true;
 }
 
-void gpi_sim_stop() {
+void gpi_sim_end() {
     registered_impls[0]->sim_end();
     sim_ending = true;
 }
