@@ -112,6 +112,9 @@ GPI_EXPORT bool gpi_has_registered_impl(void);
 
 // Stop the simulator
 GPI_EXPORT void gpi_sim_end(void);
+  
+// Pause the simulator
+GPI_EXPORT void gpi_sim_stop(void);
 
 // Returns simulation time as two uints. Units are default sim units
 GPI_EXPORT void gpi_get_sim_time(uint32_t *high, uint32_t *low);
