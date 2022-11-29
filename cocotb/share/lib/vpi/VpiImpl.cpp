@@ -629,6 +629,12 @@ void VpiImpl::sim_end() {
     }
 }
 
+// If the Python world wants things to shut down then unregister
+// the callback for end of sim
+void VpiImpl::sim_stop() {
+    vpi_control(vpiStop, vpiDiagTimeLoc);
+}
+
 extern "C" {
 
 // Main re-entry point for callbacks from simulator
